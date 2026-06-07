@@ -22,7 +22,7 @@ jobs:
       - name: Install MLflow & DagsHub
         shell: bash -l {0}
         run: |
-          pip install mlflow==2.19.0 dagshub
+          pip install mlflow dagshub
 
       - name: Run MLflow Project
         shell: bash -l {0}

@@ -72,7 +72,7 @@ with mlflow.start_run():
 
     # D. Artefak Tambahan 3: File requirements.txt
     with open("requirements.txt", "w") as f:
-        f.write("scikit-learn\npandas\nmatplotlib\nseaborn\nmlflow==2.19.0\ndagshub\n")
+        f.write("scikit-learn\npandas\nmatplotlib\nseaborn\nmlflow\ndagshub\n")
     mlflow.log_artifact("requirements.txt")
 
     # E. Logging Model Utama
