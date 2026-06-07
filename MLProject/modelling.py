@@ -31,6 +31,13 @@ param_grid = {
 grid_search = GridSearchCV(estimator=rf, param_grid=param_grid, cv=3, scoring='accuracy')
 
 print("Memulai pelatihan dan Hyperparameter Tuning...")
+
+# --- FIX ERROR DAGSHUB ---
+# Menghapus sisa Run ID dari GitHub Actions agar DagsHub membuat Run baru
+if "MLFLOW_RUN_ID" in os.environ:
+    del os.environ["MLFLOW_RUN_ID"]
+# -------------------------
+
 # 4. Memulai MLflow Run (Manual Logging)
 with mlflow.start_run():
     # Proses Training
